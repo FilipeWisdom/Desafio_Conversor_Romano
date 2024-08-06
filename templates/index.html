@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Números Romanos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .cont_heg_50 {
+        position: absolute;
+        height: 20%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* background-color: #fd7b52; */
+        background-color: #007bff;
+      }
+      .container {
+        position: fixed;
+        /* top: -10%;
+        right: 2%; */
+        min-width: 300;
+        width: 300px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        /* margin-bottom: 3px; */
+        text-align: left;
+      }
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=text], select {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .btn {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont_heg_50">
+      <!-- <h2>Conversor de Números Romanos</h2> -->
+      <h2 style="text-align: center; color: #fff">Conversor IR</h2>
+    </div>
+    <div class="container">
+      <form method="post">
+        <div class="form-group">
+          <label for="conversion_type">Tipo de Conversão</label>
+          <select id="conversion_type" name="conversion_type" required>
+              <option value="int_to_roman">Inteiro para Romano</option>
+              <option value="roman_to_int">Romano para Inteiro</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="input_value">Digite um número</label>
+            <input type="text" id="input_value" name="input_value" required>
+        </div>
+        <button type="submit" class="btn">Converter</button>
+      </form>
+      {% if result %}
+      <div class="result">
+          <h3>{{ result }}</h3>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
